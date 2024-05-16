@@ -1,0 +1,20 @@
+// NOTE: frontend/.vscode/settings.json
+{
+  "search.exclude": {
+    "**/frontend/.yarn": true,
+    "**/frontend/.pnp.*": true
+  },
+  "eslint.nodePath": "frontend/.yarn/sdks",
+  "typescript.tsdk": "frontend/.yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "eslint.workingDirectories": [{ "mode": "auto" }]
+}
