@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.2.3",
+    "@nf-team/eslint-config": "3.1.0",
     "@testing-library/jest-dom": "6.4.5",
     "@testing-library/react": "15.0.7",
     "@types/jest": "29.5.9",
@@ -44,10 +45,7 @@
     "@typescript-eslint/parser": "7.8.0",
     "cypress": "12.1.0",
     "eslint": "8.56.0",
-    "eslint-config-airbnb": "19.0.4",
-    "eslint-config-airbnb-typescript": "18.0.0",
     "eslint-import-resolver-alias": "1.1.2",
-    "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-jest": "28.5.0",
