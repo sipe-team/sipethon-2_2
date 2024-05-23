@@ -52,6 +52,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-unused-imports", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:3.2.0"],\
           ["jest", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:29.7.0"],\
+          ["lightweight-charts", "npm:4.1.4"],\
           ["next", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:14.2.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:18.3.1"],\
@@ -5179,6 +5180,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["fancy-canvas", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "./.yarn/cache/fancy-canvas-npm-2.1.0-22df58fc44-b23f666446.zip/node_modules/fancy-canvas/",\
+        "packageDependencies": [\
+          ["fancy-canvas", "npm:2.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["fast-deep-equal", [\
       ["npm:3.1.3", {\
         "packageLocation": "./.yarn/cache/fast-deep-equal-npm-3.1.3-790edcfcf5-e21a9d8d84.zip/node_modules/fast-deep-equal/",\
@@ -7278,6 +7288,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["lightweight-charts", [\
+      ["npm:4.1.4", {\
+        "packageLocation": "./.yarn/cache/lightweight-charts-npm-4.1.4-1398756c04-d992e5c800.zip/node_modules/lightweight-charts/",\
+        "packageDependencies": [\
+          ["lightweight-charts", "npm:4.1.4"],\
+          ["fancy-canvas", "npm:2.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["lines-and-columns", [\
       ["npm:1.2.4", {\
         "packageLocation": "./.yarn/cache/lines-and-columns-npm-1.2.4-d6c7cc5799-0c37f9f7fa.zip/node_modules/lines-and-columns/",\
@@ -8978,6 +8998,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-unused-imports", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:3.2.0"],\
           ["jest", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:29.7.0"],\
+          ["lightweight-charts", "npm:4.1.4"],\
           ["next", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:14.2.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:18.3.1"],\
