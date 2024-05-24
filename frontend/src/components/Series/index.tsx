@@ -7,7 +7,7 @@ import {
   AreaData,
 } from 'lightweight-charts';
 
-import { ChartContext, ChartRef } from '@/SampleChartContainer';
+import { ChartContext, ChartRef } from '../SampleChartContainer';
 
 type Props = {
   type: 'line' | 'area';

@@ -8,8 +8,8 @@ import {
 
 import { AreaData } from 'lightweight-charts';
 
-import Chart from '@/SampleChartContainer';
-import Series from '@/Series';
+import Chart from '../SampleChartContainer';
+import Series from '../Series';
 
 type Props = {
   initialData: AreaData[],

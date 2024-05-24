@@ -1,6 +1,7 @@
 import { AreaData } from 'lightweight-charts';
 
-import SampleChart from '@/SampleChart';
+import SampleChart from '@/components/SampleChart';
+import SampleChart3 from '@/components/SampleChart3';
 
 function Home() {
   const initialData: AreaData[] = [
@@ -37,6 +38,7 @@ function Home() {
   return (
     <main>
       <SampleChart data={initialData} />
+      <SampleChart3 />
     </main>
   );
 }
