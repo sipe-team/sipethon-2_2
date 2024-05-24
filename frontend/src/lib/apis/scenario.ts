@@ -1,4 +1,4 @@
-import { ScenariosTickerResponse, ScenarioTickerRequest } from '../types/scenario';
+import { ScenarioRequest, ScenariosTickerResponse, ScenarioTickerRequest } from '../types/scenario';
 
 import api from '.';
 
@@ -12,10 +12,11 @@ export const getTicker = async (params: ScenarioTickerRequest) => {
   return response;
 };
 
-export const postScenario = async () => {
+export const postScenario = async (params: ScenarioRequest) => {
   const response = await api<any>({
     url: '/v1/scenario',
     method: 'POST',
+    params,
   });
 
   return response;

@@ -1,4 +1,7 @@
+import { Noto_Serif_KR } from 'next/font/google';
 import localFont from 'next/font/local';
+
+const notoSerifKr = Noto_Serif_KR({ subsets: ['latin'], weight: '900' });
 
 const pretendardFont = localFont({
   src: [
@@ -44,4 +47,5 @@ const pretendardFont = localFont({
   ],
 });
 
-export default pretendardFont;
+// eslint-disable-next-line simple-import-sort/exports
+export { pretendardFont, notoSerifKr };
