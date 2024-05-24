@@ -1,5 +1,4 @@
 import MainPage from '@/components/MainPage';
-import SampleChart3 from '@/components/SampleChart3';
 
 function Home() {
   // const initialData: AreaData[] = [
@@ -35,9 +34,12 @@ function Home() {
 
   return (
     <main>
+      <div>
+        <h1 className="text-6xl font-bold mb-2 my-10">껄무새</h1>
+        <h2 className="text-large font-medium mb-6">이렇게 샀으면 이만큼 벌었을껄...</h2>
+      </div>
       <MainPage />
       {/* <SampleChart data={initialData} /> */}
-      <SampleChart3 />
     </main>
   );
 }
