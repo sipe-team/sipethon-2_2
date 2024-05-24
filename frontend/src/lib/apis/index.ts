@@ -1,6 +1,6 @@
 import qs from 'qs';
 
-import { FetchRequest } from '@/types/api';
+import { FetchRequest } from '../types/api';
 
 export class FetchError extends Error {
   constructor(
