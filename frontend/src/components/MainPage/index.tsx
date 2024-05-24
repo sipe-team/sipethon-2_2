@@ -1,18 +1,16 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-
 import MainForm from '../MainForm';
 import ResultCounter from '../ResultCounter';
 import SampleChart3 from '../SampleChart3';
 
-function MainPage() {
-  const searchParams = useSearchParams();
+type Props = {
+  strategy?: string;
+  currency?: string;
+  asset?: string;
+};
 
-  const strategy = searchParams.get('strategy');
-  const currency = searchParams.get('currency');
-  const asset = searchParams.get('asset');
-
+function MainPage({ asset, currency, strategy } : Props) {
   return (
     <>
       {strategy && currency && asset ? (

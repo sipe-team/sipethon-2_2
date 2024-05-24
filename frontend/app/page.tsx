@@ -1,6 +1,10 @@
 import MainPage from '@/components/MainPage';
 
-function Home() {
+type Props = {
+  searchParams: { [key: string]: string | undefined; };
+};
+
+function Home({ searchParams }: Props) {
   // const initialData: AreaData[] = [
   //   { time: '2018-12-22', value: 32.51 },
   //   { time: '2018-12-23', value: 31.11 },
@@ -38,8 +42,11 @@ function Home() {
         <h1 className="text-6xl font-bold mb-2 my-10">껄무새</h1>
         <h2 className="text-large font-medium mb-6">이렇게 샀으면 이만큼 벌었을껄...</h2>
       </div>
-      <MainPage />
-      {/* <SampleChart data={initialData} /> */}
+      <MainPage
+        asset={searchParams?.asset}
+        currency={searchParams?.currency}
+        strategy={searchParams?.strategy}
+      />
     </main>
   );
 }
