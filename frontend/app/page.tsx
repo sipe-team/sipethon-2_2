@@ -47,7 +47,6 @@ function Home({ searchParams }: Props) {
         currency={searchParams?.currency}
         strategy={searchParams?.strategy}
       />
-      {/* <SampleChart data={initialData} /> */}
     </main>
   );
 }
