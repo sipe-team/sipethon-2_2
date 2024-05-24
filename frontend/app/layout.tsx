@@ -1,4 +1,8 @@
-import './globals.css';
+import Layout from '@/components/Layout';
+
+import pretendardFont from './_fonts';
+
+import './globals.scss';
 
 export const metadata = {
   title: 'Create Next App',
@@ -9,8 +13,12 @@ function RootLayout({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko">
-      <body>{children}</body>
+    <html lang="ko" className={pretendardFont.className}>
+      <body>
+        <Layout>
+          {children}
+        </Layout>
+      </body>
     </html>
   );
 }
