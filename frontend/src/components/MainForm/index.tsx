@@ -71,14 +71,16 @@ function MainForm() {
       <Input
         type="number"
         label="투자 금액"
-        placeholder="0.00"
+        placeholder="0"
+        step={1000}
+        min={0}
         labelPlacement="outside"
         className="py-2 text-sm font-medium"
         value={asset}
         onChange={handleChangeAsset}
         endContent={(
           <div className="pointer-events-none flex items-center">
-            <span className="text-default-400 text-small">$</span>
+            <span className="text-default-400 text-small">₩</span>
           </div>
             )}
       />
