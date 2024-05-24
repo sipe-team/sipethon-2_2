@@ -37,10 +37,10 @@ function Home({ searchParams }: Props) {
   // ];
 
   return (
-    <main>
+    <main className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 dark:bg-gray-950 p-4 md:p-8">
       <div>
-        <h1 className="text-6xl font-bold mb-2 my-10">껄무새</h1>
-        <h2 className="text-large font-medium mb-6">이렇게 샀으면 이만큼 벌었을껄...</h2>
+        <h1 className="flex justify-center text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">껄무새</h1>
+        <h2 className="flex justify-center max-w-[600px] text-gray-500 md:text-xl lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 mb-4">이렇게 샀으면 이만큼 벌었을껄...</h2>
       </div>
       <MainPage
         asset={searchParams?.asset}
