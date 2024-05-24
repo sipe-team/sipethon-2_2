@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/sipe-team/sipethon-2_2#readme",
   "dependencies": {
+    "lightweight-charts": "4.1.4",
     "next": "14.2.3",
     "react": "18.3.1",
     "react-dom": "18.3.1"

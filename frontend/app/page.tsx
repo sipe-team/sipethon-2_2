@@ -1,105 +1,45 @@
-import Image from 'next/image';
+import { AreaData } from 'lightweight-charts';
 
-import styles from './page.module.scss';
+import SampleChart from '@/components/SampleChart';
+import SampleChart3 from '@/components/SampleChart3';
 
 function Home() {
+  const initialData: AreaData[] = [
+    { time: '2018-12-22', value: 32.51 },
+    { time: '2018-12-23', value: 31.11 },
+    { time: '2018-12-24', value: 27.02 },
+    { time: '2018-12-25', value: 27.32 },
+    { time: '2018-12-26', value: 25.17 },
+    { time: '2018-12-27', value: 28.89 },
+    { time: '2018-12-28', value: 25.46 },
+    { time: '2018-12-29', value: 23.92 },
+    { time: '2018-12-30', value: 22.68 },
+    { time: '2018-12-31', value: 22.67 },
+  ];
+
+  // const initialData1: AreaData[] = [
+  //   { time: '2018-10-11', value: 52.89 },
+  //   { time: '2018-10-12', value: 51.65 },
+  //   { time: '2018-10-13', value: 51.56 },
+  //   { time: '2018-10-14', value: 50.19 },
+  //   { time: '2018-10-15', value: 51.86 },
+  //   { time: '2018-10-16', value: 51.25 },
+  // ];
+
+  // const initialData2: AreaData[] = [
+  //   { time: '2018-10-11', value: 42.89 },
+  //   { time: '2018-10-12', value: 41.65 },
+  //   { time: '2018-10-13', value: 41.56 },
+  //   { time: '2018-10-14', value: 40.19 },
+  //   { time: '2018-10-15', value: 41.86 },
+  //   { time: '2018-10-16', value: 41.25 },
+  // ];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By
-            {' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs
-            {' '}
-            <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn
-            {' '}
-            <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates
-            {' '}
-            <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy
-            {' '}
-            <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main>
+      <h1>껄무새</h1>
+      <SampleChart data={initialData} />
+      <SampleChart3 />
     </main>
   );
 }
