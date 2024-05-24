@@ -10,8 +10,6 @@ import {
   SelectItem,
 } from '@nextui-org/react';
 
-import styles from './index.module.scss';
-
 const strategyData = [
   { id: 1, value: 'rsi', label: 'RSI 전략' },
   { id: 2, value: 'ma', label: '이동평균선' },
@@ -49,56 +47,52 @@ function MainForm() {
   };
 
   return (
-    <div>
-      <div className={styles.wrapper}>
-        <div className={styles.leftWrapper}>
-          <Select
-            label="투자 전략"
-            placeholder="투자 전략을 선택해주세요."
-            labelPlacement="outside"
-            className="py-2 text-sm font-medium"
-            selectedKeys={strategy ? [strategy] : undefined}
-            onChange={handleChangeStrategy}
-          >
-            {strategyData.map((data) => (
-              <SelectItem key={data.value} value={data.value}>
-                {data.label}
-              </SelectItem>
-            ))}
-          </Select>
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-lg dark:bg-gray-800">
+      <Select
+        label="투자 전략"
+        placeholder="투자 전략을 선택해주세요."
+        labelPlacement="outside"
+        className="py-2 text-sm font-medium"
+        selectedKeys={strategy ? [strategy] : undefined}
+        onChange={handleChangeStrategy}
+      >
+        {strategyData.map((data) => (
+          <SelectItem key={data.value} value={data.value}>
+            {data.label}
+          </SelectItem>
+        ))}
+      </Select>
 
-          <Select
-            label="투자 종목"
-            placeholder="투자 종목을 선택해주세요."
-            labelPlacement="outside"
-            className="py-2 text-sm font-medium"
-            selectedKeys={currency ? [currency] : undefined}
-            onChange={handleChangeCurrency}
-          >
-            {currencyData.map((data) => (
-              <SelectItem key={data.value} value={data.value}>
-                {data.label}
-              </SelectItem>
-            ))}
-          </Select>
+      <Select
+        label="투자 종목"
+        placeholder="투자 종목을 선택해주세요."
+        labelPlacement="outside"
+        className="py-2 text-sm font-medium"
+        selectedKeys={currency ? [currency] : undefined}
+        onChange={handleChangeCurrency}
+      >
+        {currencyData.map((data) => (
+          <SelectItem key={data.value} value={data.value}>
+            {data.label}
+          </SelectItem>
+        ))}
+      </Select>
 
-          <Input
-            type="number"
-            label="투자 금액"
-            placeholder="0.00"
-            labelPlacement="outside"
-            className="py-2 text-sm font-medium"
-            value={asset}
-            onChange={handleChangeAsset}
-            endContent={(
-              <div className="pointer-events-none flex items-center">
-                <span className="text-default-400 text-small">$</span>
-              </div>
+      <Input
+        type="number"
+        label="투자 금액"
+        placeholder="0.00"
+        labelPlacement="outside"
+        className="py-2 text-sm font-medium"
+        value={asset}
+        onChange={handleChangeAsset}
+        endContent={(
+          <div className="pointer-events-none flex items-center">
+            <span className="text-default-400 text-small">$</span>
+          </div>
             )}
-          />
-          <Button fullWidth className="mt-4 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg" onClick={handleClickButton}>수익률 계산하기</Button>
-        </div>
-      </div>
+      />
+      <Button fullWidth className="mt-4 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg" onClick={handleClickButton}>수익률 계산하기</Button>
     </div>
   );
 }
