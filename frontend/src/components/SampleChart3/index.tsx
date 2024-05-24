@@ -124,26 +124,36 @@ function SampleChart3() {
   }, [currentInterval, chartState, seriesState]);
 
   return (
-    <div className="w-full">
-      {intervals.map((interval) => (
-        <Button
-          key={interval}
-          color={currentInterval === interval ? 'primary' : 'default'}
-          type="button"
-          onClick={() => setCurrentInterval(interval)}
-        >
-          {interval}
-        </Button>
-      ))}
+    <div className="w-full flex flex-col gap-4">
+      <div className="flex flex-row align-middle justify-start gap-1">
+        {intervals.map((interval) => (
+          <Button
+            key={interval}
+            color={currentInterval === interval ? 'primary' : 'default'}
+            type="button"
+            radius="sm"
+            size="sm"
+            variant="flat"
+            // className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
+            onClick={() => setCurrentInterval(interval)}
+          >
+            {interval}
+          </Button>
+        ))}
+      </div>
       <div
         ref={chartContainerRef}
         className={styles.chartContainer}
       />
-      <Button
-        onClick={() => chartState?.timeScale().scrollToRealTime()}
-      >
-        Go to realtime
-      </Button>
+      <div>
+        <Button
+          variant="light"
+          color="primary"
+          onClick={() => chartState?.timeScale().scrollToRealTime()}
+        >
+          Go to realtime
+        </Button>
+      </div>
     </div>
   );
 }
