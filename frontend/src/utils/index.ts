@@ -95,3 +95,32 @@ export function calculateMovingAverageSeriesData(
 
   return maData;
 }
+
+export function numberWithComma(
+  value?: number | null,
+  returnZero = true,
+): string {
+  if (value) {
+    return value.toLocaleString(undefined, { maximumFractionDigits: 20 });
+  }
+
+  if (returnZero) {
+    return '0';
+  }
+
+  return '';
+}
+
+export function signNumberWithComma(value?: number | null, returnZero = true): string {
+  if (value) {
+    const formattedValue = value.toLocaleString(undefined, { maximumFractionDigits: 20 });
+
+    return (value > 0) ? `+${formattedValue}` : formattedValue;
+  }
+
+  if (returnZero) {
+    return '0';
+  }
+
+  return '';
+}

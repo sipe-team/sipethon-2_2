@@ -31,13 +31,19 @@ const seriesOptions: CandlestickSeriesPartialOptions = {
 
 const intervals = ['1D', '1W', '1M', '1Y'];
 
-function SampleChart3() {
+type Props = {
+  setRate: (rate: number) => void;
+};
+
+function SampleChart3({ setRate }: Props) {
   const data = generateData(2500, 20, 1000);
 
   const [currentInterval, setCurrentInterval] = useState<string>(intervals[0]);
   const chartContainerRef = useRef<HTMLDivElement>(null);
   const [chartState, setChartState] = useState<IChartApi>();
   const [seriesState, setSeriesState] = useState<ISeriesApi<'Candlestick'>>();
+
+  const initialClose = useRef<number>(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -77,6 +83,9 @@ function SampleChart3() {
 
     chart.timeScale().fitContent();
     series.setData(data.initialData);
+
+    initialClose.current = data.initialData[49].close;
+
     series.setMarkers(markers);
     chart.timeScale().fitContent();
     chart.timeScale().scrollToPosition(5, true);
@@ -110,6 +119,10 @@ function SampleChart3() {
         clearInterval(intervalID);
         return;
       }
+
+      const rate = ((update.value.close - initialClose.current) / initialClose.current) * 100;
+
+      setRate(rate);
       seriesState?.update(update.value);
     }, 100);
 
@@ -125,27 +138,26 @@ function SampleChart3() {
 
   return (
     <div className="w-full flex flex-col gap-4">
-      <div className="flex flex-row align-middle justify-start gap-1">
-        {intervals.map((interval) => (
-          <Button
-            key={interval}
-            color={currentInterval === interval ? 'primary' : 'default'}
-            type="button"
-            radius="sm"
-            size="sm"
-            variant="flat"
-            // className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
-            onClick={() => setCurrentInterval(interval)}
-          >
-            {interval}
-          </Button>
-        ))}
-      </div>
       <div
         ref={chartContainerRef}
         className={styles.chartContainer}
       />
-      <div>
+      <div className="flex flex-row align-middle justify-between">
+        <div className="flex flex-row align-middle justify-start gap-1">
+          {intervals.map((interval) => (
+            <Button
+              key={interval}
+              color={currentInterval === interval ? 'primary' : 'default'}
+              type="button"
+              radius="sm"
+              size="sm"
+              variant="flat"
+              onClick={() => setCurrentInterval(interval)}
+            >
+              {interval}
+            </Button>
+          ))}
+        </div>
         <Button
           variant="light"
           color="primary"
