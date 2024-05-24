@@ -5,9 +5,7 @@ import { ChangeEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import {
-  Button,
-  Input, Select,
-  SelectItem,
+  Button, Input, Select, SelectItem,
 } from '@nextui-org/react';
 
 const strategyData = [
@@ -53,14 +51,10 @@ function MainForm() {
         placeholder="투자 전략을 선택해주세요."
         labelPlacement="outside"
         className="py-2 text-sm font-medium"
-        selectedKeys={strategy ? [strategy] : undefined}
+        items={strategyData}
         onChange={handleChangeStrategy}
       >
-        {strategyData.map((data) => (
-          <SelectItem key={data.value} value={data.value}>
-            {data.label}
-          </SelectItem>
-        ))}
+        {(strategyItem) => <SelectItem key={strategyItem.value}>{strategyItem.label}</SelectItem>}
       </Select>
 
       <Select
@@ -68,14 +62,10 @@ function MainForm() {
         placeholder="투자 종목을 선택해주세요."
         labelPlacement="outside"
         className="py-2 text-sm font-medium"
-        selectedKeys={currency ? [currency] : undefined}
+        items={currencyData}
         onChange={handleChangeCurrency}
       >
-        {currencyData.map((data) => (
-          <SelectItem key={data.value} value={data.value}>
-            {data.label}
-          </SelectItem>
-        ))}
+        {(currencyItem) => <SelectItem key={currencyItem.value}>{currencyItem.label}</SelectItem>}
       </Select>
 
       <Input
