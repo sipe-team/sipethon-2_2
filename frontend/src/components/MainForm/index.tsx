@@ -72,7 +72,6 @@ function MainForm() {
         type="number"
         label="투자 금액"
         placeholder="0"
-        step={1000}
         min={0}
         labelPlacement="outside"
         className="py-2 text-sm font-medium"
