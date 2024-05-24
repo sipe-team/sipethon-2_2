@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { Button } from '@nextui-org/react';
 import {
   CandlestickData,
   CandlestickSeriesPartialOptions,
@@ -93,7 +94,13 @@ function SampleChart3() {
         ref={chartContainerRef}
         className={styles.chartContainer}
       />
-      <button type="button" onClick={() => chartState?.timeScale().scrollToRealTime()}>Go to realtime</button>
+      <Button
+        color="primary"
+        type="button"
+        onClick={() => chartState?.timeScale().scrollToRealTime()}
+      >
+        Go to realtime
+      </Button>
     </div>
   );
 }
