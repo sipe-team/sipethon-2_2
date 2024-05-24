@@ -3716,6 +3716,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-core@npm:5.36.1":
+  version: 5.36.1
+  resolution: "@tanstack/query-core@npm:5.36.1"
+  checksum: 10/32f5e34d044016517f3afba3a31efa686bca70275be773ec8df0ee320ecf573867ff4f996bedc107012568d586f19ac51cbbebb45808d6475f25486c47363ed9
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:5.37.1":
+  version: 5.37.1
+  resolution: "@tanstack/react-query@npm:5.37.1"
+  dependencies:
+    "@tanstack/query-core": "npm:5.36.1"
+  peerDependencies:
+    react: ^18.0.0
+  checksum: 10/f7f11f0702382c7e8fc0bee7c24d11836b4c43eb5feea10282a9054afd4be554945db2887d30c2ded8c6f11018eeba93266a319b23de5f19c0fe50a445d39141
+  languageName: node
+  linkType: hard
+
 "@testing-library/dom@npm:^10.0.0":
   version: 10.1.0
   resolution: "@testing-library/dom@npm:10.1.0"
@@ -3943,6 +3961,13 @@ __metadata:
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
   checksum: 10/5b43b8b15415e1f298243165f1d44390403bb2bd42e662bca3b5b5633fdd39c938e91b7fce3a9483699db0f7a715d08cef220c121f723a634972fdf596aec980
+  languageName: node
+  linkType: hard
+
+"@types/qs@npm:^6":
+  version: 6.9.15
+  resolution: "@types/qs@npm:6.9.15"
+  checksum: 10/97d8208c2b82013b618e7a9fc14df6bd40a73e1385ac479b6896bafc7949a46201c15f42afd06e86a05e914f146f495f606b6fb65610cc60cf2e0ff743ec38a2
   languageName: node
   linkType: hard
 
@@ -9924,6 +9949,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"qs@npm:6.12.1":
+  version: 6.12.1
+  resolution: "qs@npm:6.12.1"
+  dependencies:
+    side-channel: "npm:^1.0.6"
+  checksum: 10/035bcad2a1ab0175bac7a74c904c15913bdac252834149ccff988c93a51de02642fe7be10e43058ba4dc4094bb28ce9b59d12b9e91d40997f445cfde3ecc1c29
+  languageName: node
+  linkType: hard
+
 "qs@npm:~6.5.2":
   version: 6.5.3
   resolution: "qs@npm:6.5.3"
@@ -10517,10 +10551,12 @@ __metadata:
     "@nextui-org/system": "npm:2.1.2"
     "@nextui-org/theme": "npm:2.2.3"
     "@nf-team/eslint-config": "npm:3.1.0"
+    "@tanstack/react-query": "npm:5.37.1"
     "@testing-library/jest-dom": "npm:6.4.5"
     "@testing-library/react": "npm:15.0.7"
     "@types/jest": "npm:29.5.9"
     "@types/node": "npm:20.12.11"
+    "@types/qs": "npm:^6"
     "@types/react": "npm:18.3.2"
     "@types/react-dom": "npm:18.3.0"
     "@types/react-test-renderer": "npm:18.3.0"
@@ -10546,6 +10582,7 @@ __metadata:
     lightweight-charts: "npm:4.1.4"
     next: "npm:14.2.3"
     postcss: "npm:8.4.38"
+    qs: "npm:6.12.1"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
     react-test-renderer: "npm:18.3.1"
