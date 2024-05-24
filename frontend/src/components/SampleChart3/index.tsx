@@ -18,7 +18,7 @@ const chartOptions: DeepPartial<ChartOptions> = {
     textColor: 'black',
     background: { type: ColorType.Solid, color: 'white' },
   },
-  height: 200,
+  height: 400,
 };
 
 const seriesOptions: CandlestickSeriesPartialOptions = {
