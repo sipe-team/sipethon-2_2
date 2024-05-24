@@ -1,8 +1,11 @@
+import clsx from 'clsx';
+
+import ClientProver from '@/components/ClientProvider';
 import Layout from '@/components/Layout';
 
 import pretendardFont from './_fonts';
 
-import './globals.scss';
+import './globals.css';
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,11 +16,13 @@ function RootLayout({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko" className={pretendardFont.className}>
+    <html lang="ko" className={clsx(pretendardFont.className, 'light')}>
       <body>
-        <Layout>
-          {children}
-        </Layout>
+        <ClientProver>
+          <Layout>
+            {children}
+          </Layout>
+        </ClientProver>
       </body>
     </html>
   );
