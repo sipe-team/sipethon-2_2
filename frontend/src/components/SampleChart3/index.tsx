@@ -124,7 +124,7 @@ function SampleChart3() {
   }, [currentInterval, chartState, seriesState]);
 
   return (
-    <div>
+    <div className="w-full">
       {intervals.map((interval) => (
         <Button
           key={interval}
