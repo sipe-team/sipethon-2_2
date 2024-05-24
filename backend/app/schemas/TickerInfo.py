@@ -1,14 +1,11 @@
-import decimal
-
-
 class TradeInfo:
-    now: int = 0
+    index: int = 1
     sellOrderList: []
     buyOrderList: []
 
 class TradeUser:
-    asset: decimal.Decimal
-    coin: decimal.Decimal
+    def __init__(self, asset):
+        self.asset = asset
 
 # RSI 20 미만 인경우 매수
 # 봉 -> RSI 20 구간 -> 매수 주문

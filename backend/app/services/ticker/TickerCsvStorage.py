@@ -9,4 +9,8 @@ class TickerCsvStorage(TickerStorage):
 
     def get_ticker(self, currency_pair: str, ticker: str):
         baseCurrency = currency_pair.split("_")[1]
-        return pd.read_csv("data/csv/" + baseCurrency + "/" + currency_pair + "_" + ticker + ".csv")
+        df = pd.read_csv("data/csv/" + baseCurrency + "/" + currency_pair + "_" + ticker + ".csv")
+        df['Unnamed: 0'] = pd.to_datetime(df['Unnamed: 0'])
+        df.set_index('Unnamed: 0', inplace=True)
+        df.columns = df.columns.str.capitalize()
+        return df

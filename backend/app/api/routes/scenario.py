@@ -18,4 +18,7 @@ def scenario(scenarioDto: ScenarioSaveDto) -> dict:
 @router.post("/v1/scenario/ticker", status_code=200)
 def scenario(scenarioDto: ScenarioPlayDto) -> dict:
     # return {"result": scenario_service.play_scenario_data(scenarioDto)}
-    return {"result": scenario_service.play_scenario_data(scenarioDto)[:1].to_dict()}
+
+    # 매수 매도 정보만 리턴
+    return {"result": scenario_service.play_scenario_data(scenarioDto)}
+    #return {"result": scenario_service.play_scenario_data(scenarioDto)[:15].to_dict()}

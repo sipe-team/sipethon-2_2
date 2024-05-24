@@ -11,11 +11,10 @@ class ScenarioService:
         self.strategy = "MA"
         self.currency_pair = "KRW_BTC"
         self.ticker = "minute1"
-        self.asset = None
         self.status = "true"
         self.realtime = 0
         self.info = TradeInfo()
-        self.user = TradeUser()
+        self.asset = 0
 
     def save_scenario_data(self, scenarioSaveDto: ScenarioSaveDto):
         self.strategy = scenarioSaveDto.strategy
@@ -27,4 +26,4 @@ class ScenarioService:
     def play_scenario_data(self, scenarioPlayDto: ScenarioPlayDto):
         strategy = self.strategyFactory.create_strategy(self.strategy)
         csvStorage = self.tickerStorageFactory.create_ticker_storage(self.realtime)
-        return strategy.calculate(csvStorage, self.currency_pair, scenarioPlayDto.ticker, self.info, self.user)
+        return strategy.calculate(csvStorage, self.currency_pair, scenarioPlayDto.ticker, self.info, self.asset)

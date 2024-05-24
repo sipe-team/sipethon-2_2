@@ -4,6 +4,6 @@ class StrategyFactory:
 
     def create_strategy(self, strategy: str):
         if strategy == 'MA':
-            from app.services.strategy.MAStrategy import MAStrategy
-            self.strategy = MAStrategy()
+            from app.services.strategy.TradeStrategyImpl import TradeStrategyImpl
+            self.strategy = TradeStrategyImpl()
         return self.strategy
