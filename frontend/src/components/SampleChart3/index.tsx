@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/react';
 import {
   CandlestickData,
   CandlestickSeriesPartialOptions,
-  ChartOptions, ColorType, createChart, DeepPartial, IChartApi, ISeriesApi,
+  ChartOptions, ColorType, createChart, DeepPartial, IChartApi, ISeriesApi, SeriesMarker, Time,
 } from 'lightweight-charts';
 
 import { generateData } from '@/utils';
@@ -29,9 +29,12 @@ const seriesOptions: CandlestickSeriesPartialOptions = {
   wickDownColor: '#ef5350',
 };
 
+const intervals = ['1D', '1W', '1M', '1Y'];
+
 function SampleChart3() {
   const data = generateData(2500, 20, 1000);
 
+  const [currentInterval, setCurrentInterval] = useState<string>(intervals[0]);
   const chartContainerRef = useRef<HTMLDivElement>(null);
   const [chartState, setChartState] = useState<IChartApi>();
   const [seriesState, setSeriesState] = useState<ISeriesApi<'Candlestick'>>();
@@ -48,10 +51,35 @@ function SampleChart3() {
 
     const series = chart.addCandlestickSeries(seriesOptions);
 
+    const markers: SeriesMarker<Time>[] = [
+      {
+        time: data.initialData[20].time,
+        position: 'aboveBar',
+        color: '#f68410',
+        shape: 'circle',
+        text: 'D',
+      },
+      {
+        time: data.initialData[25].time,
+        position: 'belowBar',
+        color: '#2196F3',
+        shape: 'arrowUp',
+        text: `Buy @ ${Math.floor(data.initialData[25].high - 2)}`,
+      },
+      {
+        time: data.initialData[40].time,
+        position: 'aboveBar',
+        color: '#e91e63',
+        shape: 'arrowDown',
+        text: `Sell @ ${Math.floor(data.initialData[40].high + 2)}`,
+      },
+    ];
+
     chart.timeScale().fitContent();
     series.setData(data.initialData);
+    series.setMarkers(markers);
     chart.timeScale().fitContent();
-    chart.timeScale().scrollToPosition(5, false);
+    chart.timeScale().scrollToPosition(5, true);
 
     setSeriesState(series);
     setChartState(chart);
@@ -88,14 +116,31 @@ function SampleChart3() {
     return () => clearInterval(intervalID);
   }, [seriesState]);
 
+  useEffect(() => {
+    if (chartState && seriesState) {
+      seriesState.setData(data.initialData);
+      chartState.timeScale().fitContent();
+    }
+  }, [currentInterval, chartState, seriesState]);
+
   return (
     <div>
+      {intervals.map((interval) => (
+        <Button
+          key={interval}
+          color={currentInterval === interval ? 'primary' : 'default'}
+          type="button"
+          onClick={() => setCurrentInterval(interval)}
+        >
+          {interval}
+        </Button>
+      ))}
       <div
         ref={chartContainerRef}
         className={styles.chartContainer}
       />
       <Button
-        color="primary"
+        color="success"
         type="button"
         onClick={() => chartState?.timeScale().scrollToRealTime()}
       >

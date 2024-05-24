@@ -1,4 +1,7 @@
-import { CandlestickData, Time } from 'lightweight-charts';
+/* eslint-disable no-plusplus */
+import {
+  CandlestickData, LineData, Time, WhitespaceData,
+} from 'lightweight-charts';
 
 let randomFactor = 25 + Math.random() * 25;
 export const samplePoint = (i: number) => i
@@ -39,7 +42,6 @@ export function generateData(
   let lastCandle;
   let previousValue = samplePoint(-1);
 
-  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < numberOfPoints; ++i) {
     if (i % updatesPerCandle === 0) {
       date.setUTCDate(date.getUTCDate() + 1);
@@ -70,4 +72,26 @@ export function generateData(
     initialData,
     realtimeUpdates,
   };
+}
+
+export function calculateMovingAverageSeriesData(
+  candleData: CandlestickData[],
+  maLength: number,
+): WhitespaceData<Time>[] | LineData<Time>[] {
+  const maData = [];
+
+  for (let i = 0; i < candleData.length; i++) {
+    if (i < maLength) {
+      maData.push({ time: candleData[i].time });
+    } else {
+      let sum = 0;
+      for (let j = 0; j < maLength; j++) {
+        sum += candleData[i - j].close;
+      }
+      const maValue = sum / maLength;
+      maData.push({ time: candleData[i].time, value: maValue });
+    }
+  }
+
+  return maData;
 }
