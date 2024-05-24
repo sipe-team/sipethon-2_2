@@ -4,11 +4,14 @@ import { useEffect, useState } from 'react';
 
 import Lottie from 'lottie-react';
 
+import coinConfettiAnimationLottie from '@/lib/data/lotties/coin-confetti.json';
 import coinSpinnerAnimationLottie from '@/lib/data/lotties/coin-spinner.json';
 
 import MainForm from '../MainForm';
 import ResultCounter from '../ResultCounter';
 import SampleChart3 from '../SampleChart3';
+
+import styles from './index.module.scss';
 
 type Props = {
   strategy?: string;
@@ -37,16 +40,19 @@ function MainPage({ asset, currency, strategy } : Props) {
   return (
     <>
       {strategy && currency && asset ? (
-        <div>
+        <>
           {isVisible ? (
-            <>
+            <div className="flex flex-col gap-20 w-full max-w-6xl rounded-2xl bg-white p-6 shadow-lg dark:bg-gray-800">
+              <div className={styles.lottieWrapper}>
+                <Lottie animationData={coinConfettiAnimationLottie} loop style={{ width: '100%', height: '100%' }} />
+              </div>
               <ResultCounter />
               <SampleChart3 />
-            </>
+            </div>
           ) : (
             <Lottie animationData={coinSpinnerAnimationLottie} loop />
           )}
-        </div>
+        </>
       ) : (
         <MainForm />
       )}
