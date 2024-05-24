@@ -37,6 +37,7 @@ function Home() {
 
   return (
     <main>
+      <h1>껄무새</h1>
       <SampleChart data={initialData} />
       <SampleChart3 />
     </main>
