@@ -1,6 +1,6 @@
 import { AreaData } from 'lightweight-charts';
 
-import SampleChart from '@/components/SampleChart';
+import MainPage from '@/components/MainPage';
 import SampleChart3 from '@/components/SampleChart3';
 
 function Home() {
@@ -37,8 +37,8 @@ function Home() {
 
   return (
     <main>
-      <h1>껄무새</h1>
-      <SampleChart data={initialData} />
+      <MainPage />
+      {/* <SampleChart data={initialData} /> */}
       <SampleChart3 />
     </main>
   );

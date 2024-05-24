@@ -5460,6 +5460,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"countup.js@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "countup.js@npm:2.8.0"
+  checksum: 10/6681de9de9acd0d65b91183af280a462f2fbbc19ac5a90d30ea94e388f12b0d1cc7fa2b63b6bb83adc9dc38f938cd2a41f727a0b2ae7edf0d82f4b2ccb51e98c
+  languageName: node
+  linkType: hard
+
 "create-jest@npm:^29.7.0":
   version: 29.7.0
   resolution: "create-jest@npm:29.7.0"
@@ -9979,6 +9986,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-countup@npm:6.5.3":
+  version: 6.5.3
+  resolution: "react-countup@npm:6.5.3"
+  dependencies:
+    countup.js: "npm:^2.8.0"
+  peerDependencies:
+    react: ">= 16.3.0"
+  checksum: 10/5699e475bdd82b0b100174acbe24a33c9025080bacbba9f28593308145eacfb3e0d30be5de5bb153121346b719375e317a9f2aea87776f38d508cbe769ac0d8b
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:18.3.1":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
@@ -10584,6 +10602,7 @@ __metadata:
     postcss: "npm:8.4.38"
     qs: "npm:6.12.1"
     react: "npm:18.3.1"
+    react-countup: "npm:6.5.3"
     react-dom: "npm:18.3.1"
     react-test-renderer: "npm:18.3.1"
     sass: "npm:1.77.1"

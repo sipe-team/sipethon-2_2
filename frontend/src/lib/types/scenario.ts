@@ -3,7 +3,14 @@ export type ScenarioTickerRequest = {
   end_time: number;
 };
 
+export type ScenarioRequest = Scenario;
 export type ScenariosTickerResponse = ScenariosTicker[];
+
+export interface Scenario {
+  strategy: string;
+  currency: string;
+  asset: string;
+}
 
 export interface ScenariosTicker {
   code: 'BTC/KRW';

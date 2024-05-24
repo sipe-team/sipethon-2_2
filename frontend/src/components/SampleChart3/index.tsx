@@ -95,8 +95,6 @@ function SampleChart3() {
         className={styles.chartContainer}
       />
       <Button
-        color="primary"
-        type="button"
         onClick={() => chartState?.timeScale().scrollToRealTime()}
       >
         Go to realtime

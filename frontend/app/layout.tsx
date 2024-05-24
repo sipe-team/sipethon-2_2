@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 
-import ClientProver from '@/components/ClientProvider';
+import ClientProvider from '@/components/ClientProvider';
 import Layout from '@/components/Layout';
 
-import pretendardFont from './_fonts';
+import { pretendardFont } from './_fonts';
 
 import './globals.css';
 
@@ -18,11 +18,11 @@ function RootLayout({ children }: {
   return (
     <html lang="ko" className={clsx(pretendardFont.className, 'light')}>
       <body>
-        <ClientProver>
+        <ClientProvider>
           <Layout>
             {children}
           </Layout>
-        </ClientProver>
+        </ClientProvider>
       </body>
     </html>
   );
