@@ -17,9 +17,9 @@ function ResultCounter({ rate }: Props) {
         {numberWithComma(Math.ceil(defaultAsset + defaultAsset * (rate / 100)))}
         원
       </div>
-      <div className="text-3xl font-bold text-red-500 mb-2">
+      <div className={`text-3xl font-bold ${resultAsset - defaultAsset < 0 ? 'text-blue-500' : 'text-red-500'} mb-2`}>
         {/* <CountUp end={100} duration={3} /> */}
-        {`${Math.abs(defaultAsset - resultAsset) < 0 ? '-' : '+'}${numberWithComma(Math.abs(defaultAsset - resultAsset))}원 (${rate.toFixed(2)}%)`}
+        {`${resultAsset - defaultAsset < 0 ? '-' : '+'}${numberWithComma(Math.abs(defaultAsset - resultAsset))}원 (${Math.abs(rate).toFixed(2)}%)`}
       </div>
     </div>
   );
