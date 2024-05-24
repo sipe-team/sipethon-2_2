@@ -57,6 +57,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:18.3.1"],\
           ["react-test-renderer", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:18.3.1"],\
+          ["sanitize.css", "npm:13.0.0"],\
           ["sass", "npm:1.77.1"],\
           ["start-server-and-test", "npm:1.14.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"]\
@@ -8835,6 +8836,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["sanitize.css", [\
+      ["npm:13.0.0", {\
+        "packageLocation": "./.yarn/cache/sanitize.css-npm-13.0.0-3424903b5d-508cde59d1.zip/node_modules/sanitize.css/",\
+        "packageDependencies": [\
+          ["sanitize.css", "npm:13.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["sass", [\
       ["npm:1.77.1", {\
         "packageLocation": "./.yarn/cache/sass-npm-1.77.1-270068d8f7-df9fdd9b72.zip/node_modules/sass/",\
@@ -9003,6 +9013,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:18.3.1"],\
           ["react-test-renderer", "virtual:ce0e255e233220a6ab69cf029606b45cf18e0d06a317b62654961abbff815f35f8ba37182ee9f5d3ce11fdbeec57ba0fce08be0a9de53c679364f5ce5f57e416#npm:18.3.1"],\
+          ["sanitize.css", "npm:13.0.0"],\
           ["sass", "npm:1.77.1"],\
           ["start-server-and-test", "npm:1.14.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"]\
