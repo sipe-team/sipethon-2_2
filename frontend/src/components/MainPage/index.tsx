@@ -47,7 +47,7 @@ function MainPage({ asset, currency, strategy } : Props) {
               <div className={styles.lottieWrapper}>
                 <Lottie animationData={coinConfettiAnimationLottie} loop={2} autoPlay={false} style={{ width: '100%', height: '100%' }} />
               </div>
-              <ResultCounter rate={rate} />
+              <ResultCounter rate={rate} asset={asset} />
               <SampleChart3 setRate={setRate} />
             </div>
           ) : (

@@ -2,10 +2,12 @@ import { numberWithComma } from '@/utils';
 
 type Props = {
   rate: number;
+  asset: string;
 };
 
-function ResultCounter({ rate }: Props) {
-  const defaultAsset = 5000000;
+function ResultCounter({ rate, asset }: Props) {
+  const defaultAsset = Number(asset);
+
   const resultAsset = Math.ceil(defaultAsset + defaultAsset * (rate / 100));
 
   return (
